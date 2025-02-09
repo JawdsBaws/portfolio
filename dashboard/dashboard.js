@@ -81,26 +81,43 @@ function initializeCharts() {
     });
 }
 
+// Mock Stock Data (for development)
+function generateMockStockData(symbol, range) {
+    const { days } = timeRangeMap[range];
+    const dataPoints = days * 24; // hourly data points
+    const data = {
+        c: [], // closing prices
+        t: [], // timestamps
+    };
+
+    // Generate base price based on symbol
+    let basePrice;
+    switch(symbol) {
+        case 'SPY': basePrice = 475.50; break;
+        case 'VOO': basePrice = 435.75; break;
+        case 'IVV': basePrice = 480.25; break;
+        case 'VTI': basePrice = 240.80; break;
+        case 'QQQ': basePrice = 420.30; break;
+        default: basePrice = 100.00;
+    }
+
+    // Generate data points
+    const now = Math.floor(Date.now() / 1000);
+    for (let i = 0; i < dataPoints; i++) {
+        // Add some random variation (-0.5% to +0.5%)
+        const variation = (Math.random() - 0.5) * 0.01;
+        const price = basePrice * (1 + variation);
+        data.c.push(price);
+        data.t.push(now - ((dataPoints - i) * 3600)); // hourly timestamps
+    }
+
+    return data;
+}
+
 // Fetch Stock Data
 async function fetchStockData(symbol, range) {
-    if (!FINNHUB_API_KEY) {
-        console.error('Finnhub API key not configured');
-        return null;
-    }
-
-    const { interval, days } = timeRangeMap[range];
-    const to = Math.floor(Date.now() / 1000);
-    const from = to - (days * 24 * 60 * 60);
-
-    try {
-        const response = await fetch(
-            `https://api.finnhub.io/api/v1/stock/candle?symbol=${symbol}&resolution=${interval}&from=${from}&to=${to}&token=${FINNHUB_API_KEY}`
-        );
-        return await response.json();
-    } catch (error) {
-        console.error(`Error fetching ${symbol} data:`, error);
-        return null;
-    }
+    // Use mock data instead of API calls
+    return generateMockStockData(symbol, range);
 }
 
 // Fetch Crypto Data
