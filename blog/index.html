@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Developer Blog</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <div class="loading">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <div class="content">
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"/>
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+        </button>
+        
+        <nav>
+            <div class="nav-content">
+                <div class="logo">Portfolio</div>
+                <ul class="nav-links">
+                    <li><a href="../index.html#home">Home</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li><a href="#" class="active">Blog</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <header class="blog-header parallax" data-speed="0.5">
+            <h1>Frontend Development Blog</h1>
+            <p>Insights, tutorials, and experiences in web development</p>
+        </header>
+
+        <main class="blog-content">
+            <article class="blog-post">
+                <h2>Getting Started with CSS Grid</h2>
+                <div class="post-meta">
+                    <time datetime="2025-02-09">February 9, 2025</time>
+                    <span class="category">CSS</span>
+                </div>
+                <p>CSS Grid has revolutionized the way we handle layouts in web development. In this post, we'll explore the basics of CSS Grid and how it can make your life easier...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+
+            <article class="blog-post">
+                <h2>Mastering JavaScript Promises</h2>
+                <div class="post-meta">
+                    <time datetime="2025-02-08">February 8, 2025</time>
+                    <span class="category">JavaScript</span>
+                </div>
+                <p>Understanding Promises is crucial for modern JavaScript development. Let's dive into how Promises work and how they can improve your async code...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+
+            <article class="blog-post">
+                <h2>The Power of CSS Animations</h2>
+                <div class="post-meta">
+                    <time datetime="2025-02-07">February 7, 2025</time>
+                    <span class="category">CSS</span>
+                </div>
+                <p>CSS animations can bring life to your website. In this tutorial, we'll look at creating smooth, performant animations using pure CSS...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+        </main>
+
+        <script src="../script.js"></script>
+        <script src="blog.js"></script>
+    </div>
+</body>
+</html>
