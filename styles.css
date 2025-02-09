@@ -462,7 +462,7 @@ nav {
 }
 
 .project-card:hover .project-content {
-    transform: rotateY(180deg) scale(1.05);
+    transform: rotateY(180deg);
 }
 
 .project-content {
@@ -470,7 +470,7 @@ nav {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.6s ease;
 }
 
 .project-front, .project-back {
@@ -482,12 +482,6 @@ nav {
     padding: 2rem;
     background: var(--card-bg);
     box-shadow: var(--card-shadow);
-    transition: box-shadow 0.3s ease;
-}
-
-.project-card:hover .project-front,
-.project-card:hover .project-back {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-front, .project-back {
