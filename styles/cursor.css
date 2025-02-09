@@ -25,7 +25,8 @@
 .cursor-outline {
     width: 40px;
     height: 40px;
-    background-color: rgba(var(--accent-rgb), 0.2);
+    background-color: transparent;
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
     transition: all 0.2s ease-out;
 }
 
@@ -36,8 +37,7 @@
 
 .cursor-hover .cursor-outline {
     transform: translate(-50%, -50%) scale(1.5);
-    background-color: transparent;
-    border: 2px solid var(--accent-color);
+    border-color: rgba(var(--accent-rgb), 0.5);
 }
 
 /* Click animation */
