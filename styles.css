@@ -6,6 +6,7 @@
     --text-primary: #333333;
     --text-secondary: #666666;
     --accent-color: #007bff;
+    --accent-rgb: 0, 123, 255;
     --accent-hover: #0056b3;
     --card-bg: #ffffff;
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -20,6 +21,7 @@
     --text-primary: #ffffff;
     --text-secondary: #cccccc;
     --accent-color: #4d9fff;
+    --accent-rgb: 77, 159, 255;
     --accent-hover: #77b7ff;
     --card-bg: #2d2d2d;
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);

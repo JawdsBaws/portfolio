@@ -1,0 +1,82 @@
+/* Hide default cursor */
+* {
+    cursor: none !important;
+}
+
+/* Custom cursor elements */
+.cursor-dot,
+.cursor-outline {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(var(--accent-rgb), 0.2);
+    transition: all 0.2s ease-out;
+}
+
+/* Hover states */
+.cursor-hover .cursor-dot {
+    transform: translate(-50%, -50%) scale(0.5);
+}
+
+.cursor-hover .cursor-outline {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+}
+
+/* Click animation */
+.cursor-click .cursor-dot {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+}
+
+.cursor-click .cursor-outline {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+}
+
+/* Trail effect */
+.cursor-trail {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 9998;
+    transition: opacity 0.5s ease;
+}
+
+/* Magnetic effect target areas */
+[data-magnetic] {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hide cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .cursor-dot,
+    .cursor-outline,
+    .cursor-trail {
+        display: none;
+    }
+    * {
+        cursor: auto !important;
+    }
+}

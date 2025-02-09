@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend Developer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/cursor.css">
 </head>
 <body>
     <div class="loading">
@@ -12,7 +13,7 @@
     </div>
     
     <div class="content">
-        <button class="theme-toggle" aria-label="Toggle dark mode">
+        <button class="theme-toggle" aria-label="Toggle dark mode" data-magnetic>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"/>
             <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
@@ -22,12 +23,12 @@
         <div class="nav-content">
             <div class="logo">Portfolio</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="blog/index.html">Blog</a></li>
-                <li><a href="dashboard/index.html">Dashboard</a></li>
+                <li><a href="#home" data-magnetic>Home</a></li>
+                <li><a href="#skills" data-magnetic>Skills</a></li>
+                <li><a href="#projects" data-magnetic>Projects</a></li>
+                <li><a href="#contact" data-magnetic>Contact</a></li>
+                <li><a href="blog/index.html" data-magnetic>Blog</a></li>
+                <li><a href="dashboard/index.html" data-magnetic>Dashboard</a></li>
             </ul>
         </div>
     </nav>
@@ -37,12 +38,12 @@
             <h1 class="typing-text">Frontend Developer</h1>
             <p class="fade-in">Crafting smooth and intuitive user experiences</p>
             <div class="social-links fade-in">
-                <a href="https://github.com/JawdsBaws" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <a href="https://github.com/JawdsBaws" target="_blank" rel="noopener noreferrer" aria-label="GitHub" data-magnetic>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                     </svg>
                 </a>
-                <a href="https://linkedin.com/in/jordan-lowen" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a href="https://linkedin.com/in/jordan-lowen" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-magnetic>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                         <rect x="2" y="9" width="4" height="12"></rect>
@@ -50,7 +51,7 @@
                     </svg>
                 </a>
             </div>
-            <a href="/cv.pdf" download class="cv-download fade-in">
+            <a href="/cv.pdf" download class="cv-download fade-in" data-magnetic>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="7 10 12 15 17 10"></polyline>
@@ -64,25 +65,25 @@
     <section id="skills" class="skills parallax" data-speed="0.2">
         <h2 class="parallax" data-speed="0.1">Skills</h2>
         <div class="skills-grid">
-            <div class="skill-card">
+            <div class="skill-card" data-magnetic>
                 <h3>HTML5</h3>
                 <div class="skill-bar">
                     <div class="skill-progress" data-progress="90"></div>
                 </div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card" data-magnetic>
                 <h3>CSS3</h3>
                 <div class="skill-bar">
                     <div class="skill-progress" data-progress="85"></div>
                 </div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card" data-magnetic>
                 <h3>JavaScript</h3>
                 <div class="skill-bar">
                     <div class="skill-progress" data-progress="80"></div>
                 </div>
             </div>
-            <div class="skill-card">
+            <div class="skill-card" data-magnetic>
                 <h3>Responsive Design</h3>
                 <div class="skill-bar">
                     <div class="skill-progress" data-progress="95"></div>
@@ -94,7 +95,7 @@
     <section id="projects" class="projects parallax" data-speed="0.3">
         <h2 class="parallax" data-speed="0.15">Projects</h2>
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card" data-magnetic>
                 <div class="project-content">
                     <div class="project-front">
                         <h3>E-commerce UI</h3>
@@ -110,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-magnetic>
                 <div class="project-content">
                     <div class="project-front">
                         <h3>Dashboard Design</h3>
@@ -144,11 +145,12 @@
                 <textarea id="message" required></textarea>
                 <label for="message">Message</label>
             </div>
-            <button type="submit">Send Message</button>
+            <button type="submit" data-magnetic>Send Message</button>
         </form>
     </section>
 
         <script src="script.js"></script>
+        <script src="scripts/cursor.js"></script>
     </div>
 </body>
 </html>
