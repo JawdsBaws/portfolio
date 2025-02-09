@@ -68,9 +68,8 @@ function validateForm(e) {
     }
     
     if (isValid) {
-        // In a real application, you would handle form submission here
-        alert('Message sent successfully!');
-        form.reset();
+        // Form will be submitted to FormSubmit.co
+        form.submit();
     }
 }
 
