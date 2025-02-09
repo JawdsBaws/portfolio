@@ -5,16 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Market Dashboard - Portfolio</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="dashboard.css">
     <style>
         /* Override loading styles for dashboard */
         .content {
             transform: none;
+            opacity: 1;
         }
         .content.visible {
             transform: none;
+            opacity: 1;
+        }
+        /* Ensure proper theme inheritance */
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        .dashboard-header {
+            background: var(--hero-gradient);
         }
     </style>
-    <link rel="stylesheet" href="dashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
