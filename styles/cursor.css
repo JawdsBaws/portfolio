@@ -17,17 +17,19 @@
 }
 
 .cursor-dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     background-color: var(--accent-color);
+    transition: transform 0.2s ease-out;
 }
 
 .cursor-outline {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-color: transparent;
-    border: 1px solid rgba(var(--accent-rgb), 0.3);
-    transition: all 0.2s ease-out;
+    border: 1.5px solid rgba(var(--accent-rgb), 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    mix-blend-mode: difference;
 }
 
 /* Hover states */
@@ -36,8 +38,8 @@
 }
 
 .cursor-hover .cursor-outline {
-    transform: translate(-50%, -50%) scale(1.5);
-    border-color: rgba(var(--accent-rgb), 0.5);
+    transform: translate(-50%, -50%) scale(1.75);
+    border-color: rgba(var(--accent-rgb), 0.25);
 }
 
 /* Click animation */
@@ -54,11 +56,11 @@
 /* Trail effect */
 .cursor-trail {
     position: fixed;
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background-color: var(--accent-color);
-    opacity: 0.5;
+    opacity: 0.3;
     pointer-events: none;
     z-index: 9998;
     transition: opacity 0.5s ease;
