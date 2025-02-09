@@ -710,4 +710,31 @@ button[type="submit"]:active::after {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .filter-buttons {
+        overflow-x: auto;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+        scroll-behavior: smooth;
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 10px; /* Space for potential scrollbar */
+        margin-bottom: -10px; /* Offset padding */
+        padding-right: 1rem; /* Ensure last button is fully visible */
+    }
+
+    .filter-buttons::-webkit-scrollbar {
+        display: none; /* Chrome/Safari/Opera */
+    }
+
+    .filter-btn {
+        flex: 0 0 auto; /* Prevent shrinking */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
 }
