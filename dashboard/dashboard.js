@@ -244,8 +244,34 @@ function updateThemeIcon(isDark) {
     }
 }
 
+// Loading handler
+function handlePageLoad() {
+    const loading = document.querySelector('.loading');
+    const content = document.querySelector('.content');
+    
+    // Hide loading spinner after all content is loaded
+    window.addEventListener('load', () => {
+        // Ensure minimum loading time of 500ms for visual effect
+        setTimeout(() => {
+            loading.classList.add('hidden');
+            content.classList.add('visible');
+        }, 500);
+    });
+    
+    // If content loads too quickly, still show loading animation
+    setTimeout(() => {
+        if (!loading.classList.contains('hidden')) {
+            loading.classList.add('hidden');
+            content.classList.add('visible');
+        }
+    }, 2000);
+}
+
 // Initialize Dashboard
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize loading handler
+    handlePageLoad();
+
     // Initialize theme
     initializeTheme();
     
