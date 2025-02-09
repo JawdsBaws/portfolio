@@ -350,6 +350,14 @@ nav {
 .projects {
     padding: 5rem 2rem;
     background: var(--bg-secondary);
+    position: relative;
+    z-index: 1;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .projects h2 {
@@ -359,15 +367,55 @@ nav {
 
 /* Filter Controls */
 .filter-controls {
-    max-width: 1200px;
-    margin: 0 auto 2rem;
+    margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
-    gap: 1rem;
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
 }
+
+.search-container {
+    position: relative;
+    min-width: 250px;
+    flex: 1;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.2);
+}
+
+.search-container .search-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    pointer-events: none;
+    transition: color 0.3s ease;
+}
+
+.search-container input:focus + .search-icon {
+    color: var(--accent-color);
+}
+
 
 .filter-buttons {
     display: flex;
