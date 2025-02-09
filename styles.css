@@ -489,6 +489,8 @@ nav {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
 
 .project-card {
     height: 300px;
@@ -715,6 +717,7 @@ button[type="submit"]:active::after {
         flex-direction: column;
         align-items: stretch;
         gap: 1rem;
+        touch-action: none; /* Prevent scrolling on the container */
     }
 
     .filter-buttons {
@@ -727,6 +730,8 @@ button[type="submit"]:active::after {
         padding-bottom: 10px; /* Space for potential scrollbar */
         margin-bottom: -10px; /* Offset padding */
         padding-right: 1rem; /* Ensure last button is fully visible */
+        touch-action: pan-x; /* Prevent vertical scrolling while swiping horizontally */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     }
 
     .filter-buttons::-webkit-scrollbar {
