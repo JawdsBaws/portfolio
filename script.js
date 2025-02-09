@@ -174,6 +174,35 @@ function handlePageLoad() {
     }, 2000);
 }
 
+// Parallax scrolling effect
+function initParallax() {
+    const parallaxSections = document.querySelectorAll('.parallax');
+    let ticking = false;
+    
+    function updateParallax() {
+        parallaxSections.forEach(section => {
+            const distance = window.pageYOffset - section.offsetTop;
+            const speed = section.dataset.speed || 0.5;
+            
+            if (window.pageYOffset + window.innerHeight > section.offsetTop &&
+                window.pageYOffset < section.offsetTop + section.offsetHeight) {
+                const yPos = distance * speed;
+                section.style.transform = `translate3d(0, ${yPos}px, 0)`;
+            }
+        });
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateParallax();
+            });
+            ticking = true;
+        }
+    });
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize loading handler
@@ -181,6 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize theme
     initializeTheme();
+    
+    // Initialize parallax
+    initParallax();
     
     // Start typing animation
     const typingText = document.querySelector('.typing-text');

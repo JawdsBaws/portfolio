@@ -108,8 +108,27 @@ body {
     transition: all 0.3s ease;
 }
 
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .theme-toggle:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(180deg);
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
 }
 
 /* Navigation */
@@ -163,12 +182,35 @@ nav {
     transition: width 0.3s ease;
 }
 
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-primary);
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
 .nav-links a:hover {
     color: var(--accent-color);
+    background: var(--bg-secondary);
+    transform: translateY(-2px);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--accent-color);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
 }
 
 .nav-links a:hover::after {
-    width: 100%;
+    width: 80%;
 }
 
 /* Hero Section */
@@ -183,6 +225,67 @@ nav {
 
 .hero-content {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--text-primary);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.5rem;
+    border-radius: 50%;
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+}
+
+.social-links a:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.social-links a:active {
+    transform: translateY(0) scale(0.95);
+}
+
+.cv-download {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent-color);
+    color: var(--bg-primary);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--card-shadow);
+}
+
+.cv-download:hover {
+    transform: translateY(-2px);
+    background: var(--accent-hover);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.cv-download:active {
+    transform: translateY(0);
+}
+
+.cv-download svg {
+    transition: transform 0.3s ease;
+}
+
+.cv-download:hover svg {
+    transform: translateY(2px);
 }
 
 .typing-text {
@@ -273,8 +376,39 @@ nav {
     transition: transform 0.6s;
 }
 
+.project-card {
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
 .project-card:hover .project-content {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) scale(1.05);
+}
+
+.project-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-front, .project-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    padding: 2rem;
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    transition: box-shadow 0.3s ease;
+}
+
+.project-card:hover .project-front,
+.project-card:hover .project-back {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-front, .project-back {
@@ -376,8 +510,47 @@ button[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: var(--accent-color);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
 button[type="submit"]:hover {
     background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+button[type="submit"]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+button[type="submit"]:active::after {
+    width: 300px;
+    height: 300px;
 }
 
 /* Animations */

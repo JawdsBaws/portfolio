@@ -30,15 +30,37 @@
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
+    <section id="home" class="hero parallax" data-speed="0.5">
+        <div class="hero-content parallax" data-speed="0.3">
             <h1 class="typing-text">Frontend Developer</h1>
             <p class="fade-in">Crafting smooth and intuitive user experiences</p>
+            <div class="social-links fade-in">
+                <a href="https://github.com/JawdsBaws" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/jordan-lowen" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+            </div>
+            <a href="/cv.pdf" download class="cv-download fade-in">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download CV
+            </a>
         </div>
     </section>
 
-    <section id="skills" class="skills">
-        <h2>Skills</h2>
+    <section id="skills" class="skills parallax" data-speed="0.2">
+        <h2 class="parallax" data-speed="0.1">Skills</h2>
         <div class="skills-grid">
             <div class="skill-card">
                 <h3>HTML5</h3>
@@ -67,8 +89,8 @@
         </div>
     </section>
 
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
+    <section id="projects" class="projects parallax" data-speed="0.3">
+        <h2 class="parallax" data-speed="0.15">Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-content">
@@ -105,8 +127,8 @@
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
+    <section id="contact" class="contact parallax" data-speed="0.2">
+        <h2 class="parallax" data-speed="0.1">Contact</h2>
         <form id="contact-form">
             <div class="form-group">
                 <input type="text" id="name" required>
