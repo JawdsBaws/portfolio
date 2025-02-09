@@ -721,28 +721,35 @@ button[type="submit"]:active::after {
     }
 
     .filter-buttons {
-        overflow-x: auto;
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE/Edge */
-        scroll-behavior: smooth;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
         display: flex;
         flex-wrap: nowrap;
+        gap: 0.75rem;
         padding: 0.5rem;
-        margin: -0.5rem;
-        width: calc(100% + 1rem); /* Compensate for padding */
+        margin: 0 -1rem;
+        width: calc(100% + 2rem);
         position: relative;
-        touch-action: pan-x; /* Prevent vertical scrolling while swiping horizontally */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-        -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
-        mask-image: linear-gradient(to right, black 90%, transparent 100%);
+        scroll-snap-type: x mandatory;
     }
 
     .filter-btn {
-        margin-right: 0.75rem; /* Consistent spacing between buttons */
+        scroll-snap-align: start;
+        flex: 0 0 auto;
     }
 
-    .filter-btn:last-child {
-        margin-right: 2rem; /* Extra space for the last button to account for the fade */
+    /* Add fade effect container */
+    .filter-buttons::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 2rem;
+        background: linear-gradient(to right, transparent, var(--bg-primary));
+        pointer-events: none;
     }
 
     .filter-buttons::-webkit-scrollbar {
