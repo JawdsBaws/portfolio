@@ -94,8 +94,23 @@
 
     <section id="projects" class="projects parallax" data-speed="0.3">
         <h2 class="parallax" data-speed="0.15">Projects</h2>
+        <div class="filter-controls">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all" data-magnetic>All</button>
+                <button class="filter-btn" data-filter="frontend" data-magnetic>Frontend</button>
+                <button class="filter-btn" data-filter="fullstack" data-magnetic>Full Stack</button>
+                <button class="filter-btn" data-filter="ui" data-magnetic>UI/UX</button>
+            </div>
+            <div class="sort-controls">
+                <select id="sort-select" data-magnetic>
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="name">Name</option>
+                </select>
+            </div>
+        </div>
         <div class="projects-grid">
-            <div class="project-card" data-magnetic>
+            <div class="project-card" data-magnetic data-tags="frontend,ui" data-date="2025-02-01" data-name="E-commerce UI">
                 <div class="project-content">
                     <div class="project-front">
                         <h3>E-commerce UI</h3>
@@ -104,14 +119,15 @@
                     <div class="project-back">
                         <p>Clean and intuitive e-commerce interface with smooth transitions and responsive design.</p>
                         <div class="project-tags">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
+                            <span data-tag="frontend">HTML5</span>
+                            <span data-tag="frontend">CSS3</span>
+                            <span data-tag="frontend">JavaScript</span>
+                            <span data-tag="ui">UI/UX</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="project-card" data-magnetic>
+            <div class="project-card" data-magnetic data-tags="frontend,fullstack" data-date="2025-02-09" data-name="Dashboard Design">
                 <div class="project-content">
                     <div class="project-front">
                         <h3>Dashboard Design</h3>
@@ -120,9 +136,10 @@
                     <div class="project-back">
                         <p>Interactive dashboard with dynamic charts and smooth data filtering capabilities.</p>
                         <div class="project-tags">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
+                            <span data-tag="frontend">HTML5</span>
+                            <span data-tag="frontend">CSS3</span>
+                            <span data-tag="frontend">JavaScript</span>
+                            <span data-tag="fullstack">Node.js</span>
                         </div>
                     </div>
                 </div>
@@ -151,6 +168,7 @@
 
         <script src="script.js"></script>
         <script src="scripts/cursor.js"></script>
+        <script src="scripts/filter.js"></script>
     </div>
 </body>
 </html>
