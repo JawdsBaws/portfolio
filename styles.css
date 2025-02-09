@@ -695,14 +695,29 @@ button[type="submit"]:active::after {
     .nav-content {
         flex-direction: column;
         text-align: center;
+        padding: 0;
     }
 
     .nav-links {
         margin-top: 1rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 1rem;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        display: flex;
+        width: 100%;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
     }
 
     .nav-links li {
-        margin: 0 1rem;
+        margin: 0;
+        padding: 0 0.75rem;
+        flex: 0 0 auto;
     }
 
     .hero h1 {
